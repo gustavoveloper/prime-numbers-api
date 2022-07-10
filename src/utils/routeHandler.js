@@ -1,4 +1,10 @@
-const { matchRegexp, getErrorHttpResponseBody } = require('../helpers');
+const {
+    matchRegexp,
+    getErrorHttpResponseBody,
+    getSuccessfulHttpResponseBody
+} = require('../helpers');
+
+const getPrimeNumbers = require('./getPrimeNumbers');
 
 
 async function routeHandler(request, response) {
@@ -10,7 +16,11 @@ async function routeHandler(request, response) {
     };
 
 
-    if (matchRegexp(/^\/(api\/?)?$/i, url)) {}
+    if (matchRegexp(/^\/(api\/?)?$/i, url)) {
+        const primes = await getPrimeNumbers();
+
+        return response.json(getSuccessfulHttpResponseBody(primes))
+    }
 
     else if (matchRegexp(/^\/docs$/i, url)) {}
 
