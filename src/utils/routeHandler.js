@@ -22,7 +22,7 @@ async function routeHandler(request, response) {
         return response.json(getSuccessfulHttpResponseBody(primes))
     }
 
-    else if (matchRegexp(/^\/docs$/i, url)) {}
+    // else if (matchRegexp(/^\/docs$/i, url)) {}
 
     else {
         // 404 Error - Not Found
