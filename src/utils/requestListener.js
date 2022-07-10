@@ -14,6 +14,10 @@ async function requestListener(request, response) {
         return this
     };
 
+    response
+    .setHeader('Server', 'PrimeNumbersAPI-Server')
+    .setHeader('Connection', 'close');
+
     logger(request, response);
 
 
