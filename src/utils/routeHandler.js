@@ -24,7 +24,10 @@ async function routeHandler(request, response) {
 
     else if (matchRegexp(/^\/docs$/i, url)) {}
 
-    else {}
+    else {
+        // 404 Error - Not Found
+        return response.status(404).json(getErrorHttpResponseBody('This endpoint does not exist'))
+    }
 };
 
 
