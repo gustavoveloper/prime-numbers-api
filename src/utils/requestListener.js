@@ -6,7 +6,7 @@ const routeHandler = require('./routeHandler');
 async function requestListener(request, response) {
     response.json = body => {
         const data = JSON.stringify(body);
-        return response.end(data)
+        return response.setHeader('Content-Type', 'application/json').end(data)
     };
 
     response.status = function(code) {
