@@ -22,7 +22,14 @@ async function routeHandler(request, response) {
         return response.json(getSuccessfulHttpResponseBody(primes))
     }
 
-    // else if (matchRegexp(/^\/docs$/i, url)) {}
+    else if (matchRegexp(/^\/docs\/?$/i, url)) {
+        return (
+            response
+            .status(301)
+            .setHeader('Location', 'https://prime-numbers-api-docs.netlify.app/src/pages')
+            .json(getSuccessfulHttpResponseBody('You will be redirected to https://prime-numbers-api-docs.netlify.app/src/pages.'))
+        )
+    }
 
     else {
         // 404 Error - Not Found
