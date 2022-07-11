@@ -1,5 +1,8 @@
 # PrimeNumbersAPI - Getting the first 1000 prime numbers with NodeJS
 
+## API documentation
+See the API documentation [here](https://prime-numbers-api-docs.netlify.app/src/pages).
+
 ## How to start
 Install the project dependencies. But, before all, set the following environment variables:
 
